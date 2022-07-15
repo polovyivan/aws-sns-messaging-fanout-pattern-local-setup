@@ -56,6 +56,8 @@ aws --endpoint-url=http://localhost:4566 \
 --topic-arn="$SNS_ARN" \
 --protocol=sqs \
 --notification-endpoint=http://localhost:4566/000000000000/"$SQS_BRAZIL" \
+--attributes '{
+     "FilterPolicy": "{\"language\": [\"portuguese\"]}"}' \
 --return-subscription-arn
 
 
@@ -65,6 +67,8 @@ aws --endpoint-url=http://localhost:4566 \
 --topic-arn="$SNS_ARN" \
 --protocol=sqs \
 --notification-endpoint=http://localhost:4566/000000000000/"$SQS_UKRAINE" \
+--attributes '{
+     "FilterPolicy": "{\"language\": [\"ukrainian\"]}"}' \
 --return-subscription-arn
 
 
